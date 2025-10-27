@@ -1,0 +1,54 @@
+# Ignorar todos os arquivos de cache e temporários
+
+**pycache**/
+*.pyc
+*.pyo
+*.pyd
+*.swp
+*.tmp
+*.log
+
+# Ignorar resultados e relatórios do Robot Framework
+
+output.xml
+report.html
+log.html
+debug.log
+*.robot.xml
+*.robot.html
+
+# Ignorar arquivos de ambiente virtual
+
+.env/
+.venv/
+venv/
+ENV/
+
+# Ignorar arquivos de configuração locais
+
+*.db
+*.sqlite
+*.cfg
+*.ini
+*.local
+*.bak
+
+# Ignorar diretórios de testes temporários
+
+results/
+reports/
+logs/
+tmp/
+cache/
+
+# Ignorar arquivos de IDEs
+
+.vscode/
+.idea/
+*.code-workspace
+
+# Se quiser ignorar apenas dentro da pasta de testes:
+
+# (descomente e ajuste o nome da pasta)
+
+# /tests_robot/**
