@@ -15,3 +15,13 @@ Caso de teste 02: Pesquisar produto
     Quando eu procurar o produto "XBox Series 5"
     Então deve apresentar o produto "XBox Series 5"
 
+Caso de teste 03: Adicionar produto ao carrinho
+    [Documentation]    Pesquisa produto na Amazon e adiciona ao carrinho
+    Dado que estou na tela principal do site
+    Quando eu procurar o produto "XBox Series 5"
+    Então deve apresentar o produto "XBox Series 5"
+    E ao acessar o produto "XBox Series 5"
+    E clicar em "Adicionar ao carrinho"
+    E deve apresentar a mensagem "Adicionado ao carrinho"
+
+    
