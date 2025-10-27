@@ -8,3 +8,10 @@ Casos de teste 01: Verificar título da página na amazon
     Dado que estou na tela principal do site
     Quando eu clicar na opção "Eletrônicos"
     Então deve apresentar o título da página "Eletrônicos e Tecnologia | Amazon.com.br"
+
+Caso de teste 02: Pesquisar produto
+    [Documentation]    Pesquisa produto na Amazon e verifica se ele aparece nos resultados
+    Dado que estou na tela principal do site
+    Quando eu procurar o produto "XBox Series 5"
+    Então deve apresentar o produto "XBox Series 5"
+
