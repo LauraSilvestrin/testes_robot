@@ -27,3 +27,6 @@ E pesquisar por ${PRODUTO}
     Wait Until Element Is Visible    ${INPUT}
     Input Text    ${INPUT}    ${PRODUTO}      
     Click Button  ${BOTAO_BUSCA}
+E selecionar o primeiro produto da lista de resultados
+    Wait Until Element Is Visible    xpath=(//a[contains(@class, 'poly-component__title')])[1]
+    Click Element                    xpath=(//a[contains(@class, 'poly-component__title')])[1]
