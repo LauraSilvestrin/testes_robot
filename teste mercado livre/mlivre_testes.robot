@@ -9,3 +9,13 @@ Caso de teste 01: Procura e adiciona produtos ao carrinho
     Dado que estou na tela principal do site 
     E pesquisar por "Bola de futebol"  
     E selecionar o primeiro produto da lista de resultados 
+    # E adicionar o produto ao carrinho 
+    # E pesquisar por "Peteca" 
+    # E selecionar o primeiro produto da lista de resultados 
+    # E adicionar o produto ao carrinho 
+    # E eu retornar à página inicial 
+    # E pesquisar por "Patins" 
+    # E selecionar o primeiro produto da lista de resultados 
+    # E adicionar o produto ao carrinho
+    # Quando eu acessar o carrinho 
+    # Então devo ver três produtos listados no meu carrinho
