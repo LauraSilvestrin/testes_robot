@@ -1,6 +1,6 @@
 *** Settings ***
 Documentation    Documentação sobre a automação de um site de compra
-Resource    mlivre_resources.robot  
+Resource    marisa_resources.robot  
 
 *** Test Cases ***
 
@@ -9,7 +9,7 @@ Caso de teste 01: Procura e adiciona produtos ao carrinho
     Dado que estou na tela principal do site 
     E pesquisar por "Camiseta"  
     E selecionar o primeiro produto da lista de resultados 
-    # E adicionar o produto ao carrinho 
+    E adicionar o produto ao carrinho 
     # E pesquisar por "Peteca" 
     # E selecionar o primeiro produto da lista de resultados 
     # E adicionar o produto ao carrinho 

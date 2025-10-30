@@ -5,7 +5,8 @@ Library    SeleniumLibrary
 ${URL}          https://www.marisa.com.br/
 ${INPUT}    //input[contains(@class, 'js-site-search-input')]
 ${BTN_BUSCA}    //div[@class='input-group']//button[@type='submit']
-${BTN_CARRINHO}    //span[normalize-space()='Adicionar ao carrinho']
+${BTN_CARRINHO}    //button[normalize-space()='ADICIONAR À SACOLA']
+${BTN_CONTINUAR_COMPRANDO}    //a[normalize-space()='CONTINUAR COMPRANDO']
 *** Keywords ***
 
 Aceitar cookies se aparecer
@@ -19,6 +20,16 @@ Verificar e aceitar cookies
         Log    Cookies aceitos com sucesso.
     ELSE
         Log    Nenhum banner de cookies visível.
+    END
+
+Selecionar tamanho se existir
+    ${existe_tamanho}=    Run Keyword And Return Status    Element Should Be Visible    //ul[contains(@class,'list-inline')]//a[contains(@class, 'js-product-select-size')]
+    IF    ${existe_tamanho}
+        Wait Until Element Is Visible    (//ul[contains(@class,'list-inline')]//a[contains(@class, 'js-product-select-size')])[1]    10s
+        Click Element                    (//ul[contains(@class,'list-inline')]//a[contains(@class, 'js-product-select-size')])[1]
+        Log    Primeiro tamanho selecionado com sucesso.
+    ELSE
+        Log    Nenhum tamanho disponível para seleção.
     END
 
 # === DADO ===
@@ -40,5 +51,9 @@ E selecionar o primeiro produto da lista de resultados
     Log    Primeiro produto clicado com sucesso.
 
 E adicionar o produto ao carrinho
+    Selecionar tamanho se existir
     Wait Until Element Is Visible    ${BTN_CARRINHO}    10s
-    Click Element    ${BTN_CARRINHO}
+    Click Element                    ${BTN_CARRINHO}
+    Wait Until Element Is Visible    ${BTN_CONTINUAR_COMPRANDO}    10s
+    Click Element                    ${BTN_CONTINUAR_COMPRANDO}
+    Log    Produto adicionado ao carrinho com sucesso.
