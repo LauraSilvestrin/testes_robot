@@ -7,6 +7,7 @@ ${INPUT}    //input[contains(@class, 'js-site-search-input')]
 ${BTN_BUSCA}    //div[@class='input-group']//button[@type='submit']
 ${BTN_CARRINHO}    //button[normalize-space()='ADICIONAR À SACOLA']
 ${BTN_CONTINUAR_COMPRANDO}    //a[normalize-space()='CONTINUAR COMPRANDO']
+${BTN_ACESSAR_CARRINHO}    xpath=//div[@class='shopping-bag pull-left']//a
 *** Keywords ***
 
 Aceitar cookies se aparecer
@@ -57,3 +58,7 @@ E adicionar o produto ao carrinho
     Wait Until Element Is Visible    ${BTN_CONTINUAR_COMPRANDO}    10s
     Click Element                    ${BTN_CONTINUAR_COMPRANDO}
     Log    Produto adicionado ao carrinho com sucesso.
+
+Quando eu acessar o carrinho
+    Wait Until Element Is Visible    xpath=//div[@class='shopping-bag pull-left']//a    10s
+    Click Element                    xpath=//div[@class='shopping-bag pull-left']//a
